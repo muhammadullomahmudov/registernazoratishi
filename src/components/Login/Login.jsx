@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
-import { TextField, Button, Container, Typography } from '@mui/material';  // Material-UI komponentlari
+import { TextField, Button, Container, Typography } from '@mui/material'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
