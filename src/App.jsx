@@ -1,28 +1,35 @@
-// src/App.jsx
+// App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';  // Link import qilish
-import Register from './components/Register/Register'; 
-import Login from './components/Login/Login'; 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'; 
+import Home from './pages/Home/Home';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 import PrivatePage from './components/PrivatePage/PrivatePage';
+
+
+// Router konfiguratsiyasi
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/private",
+    element: <PrivatePage />,
+  },
+]);
 
 const App = () => {
   return (
-    <Router>
-      <div>
-
-        <nav style={{gap: 40}}>
-          <Link to="/register">Register</Link>| 
-          <Link to="/login">Login</Link> 
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<h1>Welcome to the Home Page</h1>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/pricate" element={<PrivatePage />} />
-        </Routes>
-      </div>
-    </Router>
+    <RouterProvider router={router} /> 
   );
 };
 
