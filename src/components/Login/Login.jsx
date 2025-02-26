@@ -8,12 +8,20 @@ const Login = () => {
   const navigate = useNavigate();  
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    const url = 'https://nazorat-ishi-beckend-default-rtdb.firebaseio.com/users/-OK0fkbpVyzvqAyWiSAR.json';
 
-    if (username === 'test' && password === '12345') {  
-      navigate('/private');
-    } else {
-      console.log('Login yoki parol xato');
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+  
+      if (data.username === username && data.password === password) {
+
+        navigate('/private');
+      } else {
+        console.log('Login yoki parol xato');
+      }
+    } catch (error) {
+      console.error('Xato yuz berdi:', error);
     }
   };
 

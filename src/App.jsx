@@ -11,9 +11,8 @@ const App = () => {
       <div>
 
         <nav style={{gap: 40}}>
-          <Link to="/register">Register</Link>
+          <Link to="/register">Register</Link>| 
           <Link to="/login">Login</Link> 
-          <Link to="/private">Private</Link>
         </nav>
 
         <Routes>
