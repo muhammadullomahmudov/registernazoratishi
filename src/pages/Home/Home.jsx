@@ -48,20 +48,6 @@ const Home = () => {
         Login
       </Button>
 
-      <Button 
-        component={Link} 
-        to="/private" 
-        variant="outlined" 
-        sx={{
-          width: '200px',
-          backgroundColor: '#ffffff',
-          '&:hover': {
-            backgroundColor: '#f4f4f4',
-          },
-        }}
-      >
-        Private
-      </Button>
     </Box>
   );
 };

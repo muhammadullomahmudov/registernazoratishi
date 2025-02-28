@@ -33,10 +33,12 @@ const Login = () => {
         navigate('/private');
       } else {
         console.log('Login yoki parol xato');
+        alert('Login yoki parol xato');
       }
 
     } catch (error) {
       console.error('Xato yuz berdi:', error);
+      alert('Xato yuz berdi:', error);
     }
   };
 
